@@ -1,6 +1,5 @@
 
 import '../../src/Widgets/customToast.dart';
-
 import '../../src/Screens/targetSettingScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -104,39 +103,42 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildT(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentT != tTarget)
-            setState(() => currentT++);
-          else
-            showToast(context, "You are exceeding your limit for T",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "T",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentT", style: Theme.of(context).textTheme.subtitle1,),
-                      Text("T: $tTarget", style: Theme.of(context).textTheme.subtitle1,)
-                    ],
+      child: Container(
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentT != tTarget)
+                  setState(() => currentT++);
+                else
+                  showToast(context, "You are exceeding your limit for T",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 20,
                   ),
-                )
-              ],
+                  Text(
+                    "T",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentT", style: Theme.of(context).textTheme.subtitle1,),
+                        Text("T: $tTarget", style: Theme.of(context).textTheme.subtitle1,)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -147,40 +149,43 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildC(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentC != cTarget)
-            setState(() => currentC++);
-          else
-            showToast(context, "You are exceeding your limit for D",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          color: Colors.grey.shade50,
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "C",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentC",style: Theme.of(context).textTheme.subtitle1),
-                      Text("T: $cTarget",style: Theme.of(context).textTheme.subtitle1)
-                    ],
+      child: Container(
+        color: Colors.grey.shade50,
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentC != cTarget)
+                  setState(() => currentC++);
+                else
+                  showToast(context, "You are exceeding your limit for C",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
                   ),
-                )
-              ],
+                  Text(
+                    "C",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentC",style: Theme.of(context).textTheme.subtitle1),
+                        Text("T: $cTarget",style: Theme.of(context).textTheme.subtitle1)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -191,40 +196,43 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildI(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentI != iTarget)
-            setState(() => currentI++);
-          else
-            showToast(context, "You are exceeding your limit for I",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          color: Colors.grey.shade50,
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "I",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentI",style: Theme.of(context).textTheme.subtitle1),
-                      Text("T: $iTarget",style: Theme.of(context).textTheme.subtitle1)
-                    ],
+      child: Container(
+        color: Colors.grey.shade50,
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentI != iTarget)
+                  setState(() => currentI++);
+                else
+                  showToast(context, "You are exceeding your limit for I",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
                   ),
-                )
-              ],
+                  Text(
+                    "I",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentI",style: Theme.of(context).textTheme.subtitle1),
+                        Text("T: $iTarget",style: Theme.of(context).textTheme.subtitle1)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -235,40 +243,43 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildD2(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentD2 != d2Target)
-            setState(() => currentD2++);
-          else
-            showToast(context, "You are exceeding your limit for D",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          color: Colors.grey.shade50,
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "D",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentD2",style: Theme.of(context).textTheme.subtitle1),
-                      Text("T: $d2Target",style: Theme.of(context).textTheme.subtitle1)
-                    ],
+      child: Container(
+        color: Colors.grey.shade50,
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentD2 != d2Target)
+                  setState(() => currentD2++);
+                else
+                  showToast(context, "You are exceeding your limit for D",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
                   ),
-                )
-              ],
+                  Text(
+                    "D",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentD2",style: Theme.of(context).textTheme.subtitle1),
+                        Text("T: $d2Target",style: Theme.of(context).textTheme.subtitle1)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -279,40 +290,43 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildD(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentD != dTarget)
-            setState(() => currentD++);
-          else
-            showToast(context, "You are exceeding your limit for D",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          color: Colors.grey.shade50,
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "D",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentD",style: Theme.of(context).textTheme.subtitle1),
-                      Text("T: $dTarget",style: Theme.of(context).textTheme.subtitle1)
-                    ],
+      child: Container(
+        color: Colors.grey.shade50,
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentD != dTarget)
+                  setState(() => currentD++);
+                else
+                  showToast(context, "You are exceeding your limit for D",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
                   ),
-                )
-              ],
+                  Text(
+                    "D",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentD",style: Theme.of(context).textTheme.subtitle1),
+                        Text("T: $dTarget",style: Theme.of(context).textTheme.subtitle1)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -323,40 +337,43 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Expanded buildA(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: InkWell(
-        onTap: () {
-          if (currentA != aTarget)
-            setState(() => currentA++);
-          else
-            showToast(context, "You are exceeding your limit for A",
-                bgColor: Colors.redAccent);
-        },
-        child: Container(
-          color: Colors.grey.shade50,
-          height: screenSize.height / 3.5,
-          width: screenSize.width / 2,
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "A",
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("C: $currentA",style: Theme.of(context).textTheme.subtitle1),
-                      Text("T: $aTarget",style: Theme.of(context).textTheme.subtitle1)
-                    ],
+      child: Container(
+        color: Colors.grey.shade50,
+        height: screenSize.height / 3.5,
+        width: screenSize.width / 2,
+        child: Card(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {
+                if (currentA != aTarget)
+                  setState(() => currentA++);
+                else
+                  showToast(context, "You are exceeding your limit for A",
+                      bgColor: Colors.redAccent);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
                   ),
-                )
-              ],
+                  Text(
+                    "A",
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text("C: $currentA",style: Theme.of(context).textTheme.subtitle1),
+                        Text("T: $aTarget",style: Theme.of(context).textTheme.subtitle1)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
