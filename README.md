@@ -1,4 +1,4 @@
-# addictflutter
+# addict
 
 An Application to track your addiction habbits.
 
