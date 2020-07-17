@@ -118,7 +118,7 @@ class _TargetSettingPageState extends State<TargetSettingPage> {
   //Target Duration Widget
   Widget buildDropDown() {
     List<String> targetDuration = ['Daily', 'Weekly', 'Monthly', 'Yearly'];
-    selectedTargetDuration = targetDuration.first;
+//    selectedTargetDuration = targetDuration.first;
     return Container(
         height: 45,
         margin: EdgeInsets.all(16),

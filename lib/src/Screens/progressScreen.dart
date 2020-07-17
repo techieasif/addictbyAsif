@@ -52,7 +52,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("${widget.targetDurationName} Progress"),
+        title: Text("${widget.targetDurationName ?? "Daily"} Progress"),
         actions: <Widget>[
           IconButton(
             onPressed: resetTarget,
